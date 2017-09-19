@@ -7,6 +7,6 @@ class CreateItems < ActiveRecord::Migration
       t.integer :category_id
 
       t.timestamps null: false
-
+    end
   end
 end
