@@ -7,4 +7,9 @@ class User < ActiveRecord::Base
   has_many :carts
   has_many :orders
   belongs_to :current_cart, :class_name => "Cart", :foreign_key => "current_cart_id"
+
+
+  def create_current_cart
+    current
+  end
 end
