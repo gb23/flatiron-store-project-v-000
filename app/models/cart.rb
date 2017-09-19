@@ -14,5 +14,10 @@ class Cart < ActiveRecord::Base
     has_many :items, through: :line_items
     belongs_to :user
 
-
+    def total
+        tot = 0
+        self.items.each do |item|
+            tot += item.price
+        end
+    end
 end
