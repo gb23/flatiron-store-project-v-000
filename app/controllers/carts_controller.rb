@@ -6,6 +6,8 @@ class CartsController < ApplicationController
         @cart.status = "submitted"
         @cart.save
         @cart.update_inventory
+        @cart.delete
+
         redirect_to cart_path(@cart)
     end
 
