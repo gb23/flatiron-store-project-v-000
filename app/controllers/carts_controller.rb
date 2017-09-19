@@ -3,6 +3,9 @@ class CartsController < ApplicationController
 
     def checkout
         
+        @cart.status = "submitted"
+        @cart.save
+        @cart.update_inventory
         redirect_to cart_path(@cart)
     end
 

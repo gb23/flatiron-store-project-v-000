@@ -11,10 +11,8 @@
 <% end %>
 
 <p>Order total: <strong>$<%= @cart.total.to_f/100 %></strong> </p>
-<%= button_to 'Checkout', checkout_path %>
 
 
-
-<%# if @cart.status == 'not submitted' %>
-  <%#= button_to 'Checkout', checkout_path %>
-<%# end %>
+<% if @cart.status == 'not submitted' %>
+  <%= button_to 'Checkout', checkout_path %>
+<% end %>

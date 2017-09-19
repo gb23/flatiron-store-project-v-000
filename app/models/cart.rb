@@ -31,4 +31,8 @@ class Cart < ActiveRecord::Base
         end
         line_item
       end
+
+    def update_inventory
+        
+    end
 end
