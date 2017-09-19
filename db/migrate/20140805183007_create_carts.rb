@@ -1,6 +1,9 @@
 class CreateCarts < ActiveRecord::Migration
   def change
-    has_many :line_items
-    has_many :items, through: :line_items
+    create_table :carts do |t|
+      t.integer :user_id
+
+      t.timestamps null: false
+    end
   end
 end
