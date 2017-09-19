@@ -4,10 +4,11 @@ class CartsController < ApplicationController
     def checkout
         
         @cart.status = "submitted"
-        @cart.save
+        
         @cart.update_inventory
-        @cart.delete
-
+        current_user.current_cart = nil
+        current_user.save
+        @cart.save
         redirect_to cart_path(@cart)
     end
 
