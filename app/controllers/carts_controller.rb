@@ -3,6 +3,7 @@ class CartsController < ApplicationController
 
     def show
         
+        binding.pry
     end
 
 
