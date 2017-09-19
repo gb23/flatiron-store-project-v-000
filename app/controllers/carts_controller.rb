@@ -1,9 +1,9 @@
 class CartsController < ApplicationController
-    before_action :find_cart, only: [:show]
+    before_action :find_cart, only: [:show, :checkout]
 
-    def show
+    def checkout
         
-        binding.pry
+        redirect_to cart_path(@cart)
     end
 
 
