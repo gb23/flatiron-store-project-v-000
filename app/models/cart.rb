@@ -16,8 +16,14 @@ class Cart < ActiveRecord::Base
 
     def total
         tot = 0
-        self.items.each do |item|
-            tot += item.price
+        self.line_items.each do |line_item|
+            tot += line_item.item.price * line_item.quantity
         end
+        tot
+    end
+
+    def add_item(item_id)
+binding.pry
+        self.items.create(id: item_id)
     end
 end
